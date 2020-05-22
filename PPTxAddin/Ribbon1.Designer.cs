@@ -36,7 +36,22 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.writeCommentCombo = this.Factory.CreateRibbonComboBox();
+            this.box1 = this.Factory.CreateRibbonBox();
+            this.writeCommentInputButton = this.Factory.CreateRibbonButton();
+            this.box2 = this.Factory.CreateRibbonBox();
+            this.writeCommentAddButton = this.Factory.CreateRibbonButton();
+            this.writeCommentAddFromFormButton = this.Factory.CreateRibbonButton();
+            this.writeCommentAddFromFileButton = this.Factory.CreateRibbonButton();
+            this.box3 = this.Factory.CreateRibbonBox();
+            this.delCommentSingleButton = this.Factory.CreateRibbonButton();
+            this.delCommentAllButton = this.Factory.CreateRibbonButton();
+            this.doEditComboButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
+            this.group1.SuspendLayout();
+            this.box1.SuspendLayout();
+            this.box2.SuspendLayout();
+            this.box3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -47,7 +62,73 @@
             // 
             // group1
             // 
+            this.group1.Items.Add(this.box1);
+            this.group1.Items.Add(this.box2);
+            this.group1.Items.Add(this.box3);
+            this.group1.Label = "定型文処理";
             this.group1.Name = "group1";
+            // 
+            // writeCommentCombo
+            // 
+            this.writeCommentCombo.Label = "comboBox1";
+            this.writeCommentCombo.Name = "writeCommentCombo";
+            this.writeCommentCombo.ShowLabel = false;
+            this.writeCommentCombo.SizeString = "AAAAAAAAAAA";
+            // 
+            // box1
+            // 
+            this.box1.Items.Add(this.writeCommentCombo);
+            this.box1.Items.Add(this.writeCommentInputButton);
+            this.box1.Name = "box1";
+            // 
+            // writeCommentInputButton
+            // 
+            this.writeCommentInputButton.Label = "語句挿入";
+            this.writeCommentInputButton.Name = "writeCommentInputButton";
+            // 
+            // box2
+            // 
+            this.box2.Items.Add(this.writeCommentAddButton);
+            this.box2.Items.Add(this.writeCommentAddFromFormButton);
+            this.box2.Items.Add(this.writeCommentAddFromFileButton);
+            this.box2.Name = "box2";
+            // 
+            // writeCommentAddButton
+            // 
+            this.writeCommentAddButton.Label = "選択";
+            this.writeCommentAddButton.Name = "writeCommentAddButton";
+            // 
+            // writeCommentAddFromFormButton
+            // 
+            this.writeCommentAddFromFormButton.Label = "フォーム";
+            this.writeCommentAddFromFormButton.Name = "writeCommentAddFromFormButton";
+            // 
+            // writeCommentAddFromFileButton
+            // 
+            this.writeCommentAddFromFileButton.Label = "ファイルから";
+            this.writeCommentAddFromFileButton.Name = "writeCommentAddFromFileButton";
+            // 
+            // box3
+            // 
+            this.box3.Items.Add(this.delCommentSingleButton);
+            this.box3.Items.Add(this.delCommentAllButton);
+            this.box3.Items.Add(this.doEditComboButton);
+            this.box3.Name = "box3";
+            // 
+            // delCommentSingleButton
+            // 
+            this.delCommentSingleButton.Label = "1件";
+            this.delCommentSingleButton.Name = "delCommentSingleButton";
+            // 
+            // delCommentAllButton
+            // 
+            this.delCommentAllButton.Label = "全件削除";
+            this.delCommentAllButton.Name = "delCommentAllButton";
+            // 
+            // doEditComboButton
+            // 
+            this.doEditComboButton.Label = "値編集";
+            this.doEditComboButton.Name = "doEditComboButton";
             // 
             // Ribbon1
             // 
@@ -57,6 +138,14 @@
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon1_Load);
             this.tab1.ResumeLayout(false);
             this.tab1.PerformLayout();
+            this.group1.ResumeLayout(false);
+            this.group1.PerformLayout();
+            this.box1.ResumeLayout(false);
+            this.box1.PerformLayout();
+            this.box2.ResumeLayout(false);
+            this.box2.PerformLayout();
+            this.box3.ResumeLayout(false);
+            this.box3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -65,6 +154,17 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonComboBox writeCommentCombo;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton writeCommentInputButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton writeCommentAddButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton writeCommentAddFromFormButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton writeCommentAddFromFileButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton delCommentSingleButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton delCommentAllButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton doEditComboButton;
     }
 
     partial class ThisRibbonCollection

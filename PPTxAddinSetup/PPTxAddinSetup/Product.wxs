@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="PPTxAddin" Language="1033" Version="0.0.0.1" Manufacturer="JCI" UpgradeCode="A8AA1F4A-B864-4674-BF6E-6126884DCFC1">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="PPTxAddinSetup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="Registry_FriendlyName" />
+      <ComponentRef Id="Registry_Description" />
+      <ComponentRef Id="Registry_Manifest" />
+      <ComponentRef Id="Registry_LoadBehavior" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="PPTxAddin" />
+        <Component Id="Registry_FriendlyName">
+          <RegistryValue Id="RegKey_FriendlyName" Root="HKCU"
+                         Key="Software\Microsoft\Office\PowerPoint\AddIns\PPTxAddin"
+                         Name="FriendlyName"
+                         Value="My PowerPoint Add-In"
+                         Type="string" KeyPath="yes" />
+        </Component>
+        <Component Id="Registry_Description">
+          <RegistryValue Id="RegKey_Description" Root="HKCU"
+                         Key="Software\Microsoft\Office\PowerPoint\AddIns\PPTxAddin"
+                         Name="Description"
+                         Value="My very cool PowerPoint Add-In"
+                         Type="string" KeyPath="yes" />
+        </Component>
+        <Component Id="Registry_Manifest">
+          <RegistryValue Id="RegKey_Manifest" Root="HKCU"
+                         Key="Software\Microsoft\Office\PowerPoint\AddIns\PPTxAddin"
+                         Name="Manifest" Value="[INSTALLFOLDER]PPTxAddin.vsto|vstolocal"
+                         Type="string" KeyPath="yes" />
+        </Component>
+        <Component Id="Registry_LoadBehavior">
+          <RegistryValue Id="RegKey_LoadBehavior" Root="HKCU"
+                         Key="Software\Microsoft\Office\PowerPoint\AddIns\PPTxAddin"
+                         Name="LoadBehavior" Value="3"
+                         Type="integer" KeyPath="yes" />
+        </Component>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+      <Component Id="PPTxAddin_vsto_Component">
+        <File Id="PPTxAddin_vsto" KeyPath="yes"
+              Name="PPTxAddin.vsto" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="PPTxAddin_dll_manifest_Component">
+        <File Id="PPTxAddin_dll_manifest" KeyPath="yes"
+              Name="PPTxAddin.dll.manifest" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="MSOfficeToolsCommon_dll_Component">
+        <File Id="MSOfficeToolsCommon_dll" KeyPath="yes"
+              Name="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"
+              Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="PPTxAddin_dll_Component" >
+        <File Id="PPTxAddin_dll" KeyPath="yes"
+              Name="PPTxAddin.dll" Source="$(var.AddinFiles)" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

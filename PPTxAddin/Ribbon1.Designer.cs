@@ -43,11 +43,11 @@
             this.writeCommentAddButton = this.Factory.CreateRibbonButton();
             this.writeCommentAddFromFormButton = this.Factory.CreateRibbonButton();
             this.writeCommentAddFromFileButton = this.Factory.CreateRibbonButton();
+            this.addCommentPreClearCheck = this.Factory.CreateRibbonCheckBox();
             this.box3 = this.Factory.CreateRibbonBox();
             this.delCommentSingleButton = this.Factory.CreateRibbonButton();
             this.delCommentAllButton = this.Factory.CreateRibbonButton();
             this.doEditComboButton = this.Factory.CreateRibbonButton();
-            this.addCommentPreClearCheck = this.Factory.CreateRibbonCheckBox();
             this.writeCommentComboSaveButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
@@ -116,6 +116,11 @@
             this.writeCommentAddFromFileButton.Name = "writeCommentAddFromFileButton";
             this.writeCommentAddFromFileButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.writeCommentAddFromFileButton_Click);
             // 
+            // addCommentPreClearCheck
+            // 
+            this.addCommentPreClearCheck.Label = "全削除追加";
+            this.addCommentPreClearCheck.Name = "addCommentPreClearCheck";
+            // 
             // box3
             // 
             this.box3.Items.Add(this.delCommentSingleButton);
@@ -141,11 +146,6 @@
             this.doEditComboButton.Label = "値編集";
             this.doEditComboButton.Name = "doEditComboButton";
             this.doEditComboButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.doEditComboButton_Click);
-            // 
-            // addCommentPreClearCheck
-            // 
-            this.addCommentPreClearCheck.Label = "全削除追加";
-            this.addCommentPreClearCheck.Name = "addCommentPreClearCheck";
             // 
             // writeCommentComboSaveButton
             // 

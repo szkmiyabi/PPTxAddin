@@ -67,7 +67,7 @@
             this.group1.Items.Add(this.box1);
             this.group1.Items.Add(this.box2);
             this.group1.Items.Add(this.box3);
-            this.group1.Label = "定型文処理";
+            this.group1.Label = "文字編集";
             this.group1.Name = "group1";
             // 
             // box1

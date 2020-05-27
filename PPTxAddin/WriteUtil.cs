@@ -75,6 +75,7 @@ namespace PPTxAddin
             var sa = getSelection();
             string buff = sa.TextRange.Text;
             buff = buff.Replace("\r\n", br_sp);
+            buff = buff.Replace("\r", br_sp);
 
             if(buff != "")
             {

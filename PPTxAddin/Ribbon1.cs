@@ -118,5 +118,11 @@ namespace PPTxAddin
         {
             insert_textbox();
         }
+
+        //吹出
+        private void insertCalloutButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            insert_callout();
+        }
     }
 }

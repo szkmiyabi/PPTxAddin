@@ -50,10 +50,11 @@
             this.doEditComboButton = this.Factory.CreateRibbonButton();
             this.writeCommentComboSaveButton = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
-            this.insertRectangleButton = this.Factory.CreateRibbonButton();
-            this.insertArrowButton = this.Factory.CreateRibbonButton();
-            this.insertTextboxButton = this.Factory.CreateRibbonButton();
             this.box4 = this.Factory.CreateRibbonBox();
+            this.insertRectangleButton = this.Factory.CreateRibbonButton();
+            this.insertTextboxButton = this.Factory.CreateRibbonButton();
+            this.insertArrowButton = this.Factory.CreateRibbonButton();
+            this.insertCalloutButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
@@ -167,17 +168,19 @@
             this.group2.Label = "描画";
             this.group2.Name = "group2";
             // 
+            // box4
+            // 
+            this.box4.Items.Add(this.insertRectangleButton);
+            this.box4.Items.Add(this.insertArrowButton);
+            this.box4.Items.Add(this.insertTextboxButton);
+            this.box4.Items.Add(this.insertCalloutButton);
+            this.box4.Name = "box4";
+            // 
             // insertRectangleButton
             // 
             this.insertRectangleButton.Label = "赤枠";
             this.insertRectangleButton.Name = "insertRectangleButton";
             this.insertRectangleButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertRectangleButton_Click);
-            // 
-            // insertArrowButton
-            // 
-            this.insertArrowButton.Label = "図矢印";
-            this.insertArrowButton.Name = "insertArrowButton";
-            this.insertArrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertArrowButton_Click);
             // 
             // insertTextboxButton
             // 
@@ -185,12 +188,17 @@
             this.insertTextboxButton.Name = "insertTextboxButton";
             this.insertTextboxButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertTextboxButton_Click);
             // 
-            // box4
+            // insertArrowButton
             // 
-            this.box4.Items.Add(this.insertRectangleButton);
-            this.box4.Items.Add(this.insertTextboxButton);
-            this.box4.Items.Add(this.insertArrowButton);
-            this.box4.Name = "box4";
+            this.insertArrowButton.Label = "図矢印";
+            this.insertArrowButton.Name = "insertArrowButton";
+            this.insertArrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertArrowButton_Click);
+            // 
+            // insertCalloutButton
+            // 
+            this.insertCalloutButton.Label = "吹出";
+            this.insertCalloutButton.Name = "insertCalloutButton";
+            this.insertCalloutButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertCalloutButton_Click);
             // 
             // Ribbon1
             // 
@@ -238,6 +246,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertArrowButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertTextboxButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonBox box4;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton insertCalloutButton;
     }
 
     partial class ThisRibbonCollection

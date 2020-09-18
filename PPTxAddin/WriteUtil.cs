@@ -172,29 +172,39 @@ namespace PPTxAddin
         private void insert_rounded_rect()
         {
             var cs = getCurrentSlide();
-            float[] size = { 120, 90 };
-            var rectangle = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRoundedRectangle, 100, 100,  size[0], size[1]);
+            float[] size = { 120, 29 };
+            var rectangle = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRoundedRectangle, 80, 80,  size[0], size[1]);
             rectangle.Fill.Visible = MsoTriState.msoFalse;
             rectangle.Line.ForeColor.RGB = getRGB(255, 0, 0);
             rectangle.Line.Weight = 2.5F;
+            rectangle.Shadow.Visible = MsoTriState.msoTrue;
+            rectangle.Shadow.Style = MsoShadowStyle.msoShadowStyleOuterShadow;
+            rectangle.Shadow.OffsetX = 1;
+            rectangle.Shadow.OffsetY = 1;
+            rectangle.Shadow.Transparency = 0.5F;
         }
 
         //図形矢印を挿入
         private void insert_arrow()
         {
             var cs = getCurrentSlide();
-            float[] size = { 120, 90 };
-            var arrow = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRightArrow, 110, 110, size[0], size[1]);
+            float[] size = { 200, 75 };
+            var arrow = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRightArrow, 90, 90, size[0], size[1]);
             arrow.Fill.ForeColor.RGB = getRGB(255, 153, 0);
             arrow.Line.Visible = MsoTriState.msoFalse;
+            arrow.Shadow.Visible = MsoTriState.msoTrue;
+            arrow.Shadow.Style = MsoShadowStyle.msoShadowStyleOuterShadow;
+            arrow.Shadow.OffsetX = 1;
+            arrow.Shadow.OffsetY = 1;
+            arrow.Shadow.Transparency = 0.5F;
         }
 
         //文字枠を挿入
         private void insert_textbox()
         {
             var cs = getCurrentSlide();
-            float[] size = { 180, 90 };
-            var textbox = cs.Shapes.AddTextbox(MsoTextOrientation.msoTextOrientationHorizontal, 90, 90, size[0], size[1]);
+            float[] size = { 250, 65 };
+            var textbox = cs.Shapes.AddTextbox(MsoTextOrientation.msoTextOrientationHorizontal, 100, 100, size[0], size[1]);
             textbox.Line.Visible = MsoTriState.msoTrue;
             textbox.Line.ForeColor.RGB = getRGB(166, 166, 166);
             textbox.Line.Weight = 2.5F;
@@ -203,6 +213,19 @@ namespace PPTxAddin
             textbox.TextFrame.AutoSize = PPT.PpAutoSize.ppAutoSizeNone;
             textbox.TextFrame.TextRange.Font.Name = "HGPｺﾞｼｯｸM";
             textbox.TextFrame.TextRange.Text = "Textbox";
+        }
+
+        //吹出を挿入
+        private void insert_callout()
+        {
+            var cs = getCurrentSlide();
+            float[] size = { 120, 60 };
+            var callout = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRectangularCallout, 110, 110, size[0], size[1]);
+            callout.Fill.Visible = MsoTriState.msoTrue;
+            callout.Fill.ForeColor.RGB = getRGB(255, 255, 255);
+            callout.Line.ForeColor.RGB = getRGB(255, 153, 0);
+            callout.Line.Weight = 2.5F;
+            callout.TextFrame.TextRange.Font.Name = "HGPｺﾞｼｯｸM";
         }
 
     }

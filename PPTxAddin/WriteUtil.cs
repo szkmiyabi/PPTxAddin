@@ -168,6 +168,42 @@ namespace PPTxAddin
             MessageBox.Show("保存できました!");
         }
 
+        //角丸赤枠を挿入
+        private void insert_rounded_rect()
+        {
+            var cs = getCurrentSlide();
+            float[] size = { 120, 90 };
+            var rectangle = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRoundedRectangle, 100, 100,  size[0], size[1]);
+            rectangle.Fill.Visible = MsoTriState.msoFalse;
+            rectangle.Line.ForeColor.RGB = getRGB(255, 0, 0);
+            rectangle.Line.Weight = 2.5F;
+        }
+
+        //図形矢印を挿入
+        private void insert_arrow()
+        {
+            var cs = getCurrentSlide();
+            float[] size = { 120, 90 };
+            var arrow = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRightArrow, 110, 110, size[0], size[1]);
+            arrow.Fill.ForeColor.RGB = getRGB(255, 153, 0);
+            arrow.Line.Visible = MsoTriState.msoFalse;
+        }
+
+        //文字枠を挿入
+        private void insert_textbox()
+        {
+            var cs = getCurrentSlide();
+            float[] size = { 180, 90 };
+            var textbox = cs.Shapes.AddTextbox(MsoTextOrientation.msoTextOrientationHorizontal, 90, 90, size[0], size[1]);
+            textbox.Line.Visible = MsoTriState.msoTrue;
+            textbox.Line.ForeColor.RGB = getRGB(166, 166, 166);
+            textbox.Line.Weight = 2.5F;
+            textbox.Fill.Visible = MsoTriState.msoTrue;
+            textbox.Fill.ForeColor.RGB = getRGB(255, 255, 255);
+            textbox.TextFrame.AutoSize = PPT.PpAutoSize.ppAutoSizeNone;
+            textbox.TextFrame.TextRange.Font.Name = "HGPｺﾞｼｯｸM";
+            textbox.TextFrame.TextRange.Text = "Textbox";
+        }
 
     }
 }

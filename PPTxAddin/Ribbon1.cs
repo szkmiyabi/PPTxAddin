@@ -100,5 +100,23 @@ namespace PPTxAddin
         {
             cmbefrmObj.Show();
         }
+
+        //赤枠
+        private void insertRectangleButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            insert_rounded_rect();
+        }
+
+        //図矢印
+        private void insertArrowButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            insert_arrow();
+        }
+
+        //文字枠
+        private void insertTextboxButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            insert_textbox();
+        }
     }
 }

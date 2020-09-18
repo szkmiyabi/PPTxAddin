@@ -49,16 +49,24 @@
             this.delCommentAllButton = this.Factory.CreateRibbonButton();
             this.doEditComboButton = this.Factory.CreateRibbonButton();
             this.writeCommentComboSaveButton = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.insertRectangleButton = this.Factory.CreateRibbonButton();
+            this.insertArrowButton = this.Factory.CreateRibbonButton();
+            this.insertTextboxButton = this.Factory.CreateRibbonButton();
+            this.box4 = this.Factory.CreateRibbonBox();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
             this.box2.SuspendLayout();
             this.box3.SuspendLayout();
+            this.group2.SuspendLayout();
+            this.box4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.Groups.Add(this.group1);
+            this.tab1.Groups.Add(this.group2);
             this.tab1.Label = "PPTxA";
             this.tab1.Name = "tab1";
             // 
@@ -153,6 +161,37 @@
             this.writeCommentComboSaveButton.Name = "writeCommentComboSaveButton";
             this.writeCommentComboSaveButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.writeCommentComboSaveButton_Click);
             // 
+            // group2
+            // 
+            this.group2.Items.Add(this.box4);
+            this.group2.Label = "描画";
+            this.group2.Name = "group2";
+            // 
+            // insertRectangleButton
+            // 
+            this.insertRectangleButton.Label = "赤枠";
+            this.insertRectangleButton.Name = "insertRectangleButton";
+            this.insertRectangleButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertRectangleButton_Click);
+            // 
+            // insertArrowButton
+            // 
+            this.insertArrowButton.Label = "図矢印";
+            this.insertArrowButton.Name = "insertArrowButton";
+            this.insertArrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertArrowButton_Click);
+            // 
+            // insertTextboxButton
+            // 
+            this.insertTextboxButton.Label = "文字枠";
+            this.insertTextboxButton.Name = "insertTextboxButton";
+            this.insertTextboxButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertTextboxButton_Click);
+            // 
+            // box4
+            // 
+            this.box4.Items.Add(this.insertRectangleButton);
+            this.box4.Items.Add(this.insertTextboxButton);
+            this.box4.Items.Add(this.insertArrowButton);
+            this.box4.Name = "box4";
+            // 
             // Ribbon1
             // 
             this.Name = "Ribbon1";
@@ -169,6 +208,10 @@
             this.box2.PerformLayout();
             this.box3.ResumeLayout(false);
             this.box3.PerformLayout();
+            this.group2.ResumeLayout(false);
+            this.group2.PerformLayout();
+            this.box4.ResumeLayout(false);
+            this.box4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +233,11 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton doEditComboButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox addCommentPreClearCheck;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton writeCommentComboSaveButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton insertRectangleButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton insertArrowButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton insertTextboxButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box4;
     }
 
     partial class ThisRibbonCollection

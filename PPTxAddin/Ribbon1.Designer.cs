@@ -34,6 +34,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl1 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl2 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl3 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl4 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl5 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl6 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl7 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl8 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl9 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl10 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl11 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl12 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl13 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl14 = this.Factory.CreateRibbonDropDownItem();
+            Microsoft.Office.Tools.Ribbon.RibbonDropDownItem ribbonDropDownItemImpl15 = this.Factory.CreateRibbonDropDownItem();
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.box1 = this.Factory.CreateRibbonBox();
@@ -49,25 +64,27 @@
             this.delCommentAllButton = this.Factory.CreateRibbonButton();
             this.doEditComboButton = this.Factory.CreateRibbonButton();
             this.writeCommentComboSaveButton = this.Factory.CreateRibbonButton();
-            this.group2 = this.Factory.CreateRibbonGroup();
-            this.box4 = this.Factory.CreateRibbonBox();
+            this.box5 = this.Factory.CreateRibbonBox();
+            this.writeMarkCombo = this.Factory.CreateRibbonComboBox();
+            this.writeMarkInputButton = this.Factory.CreateRibbonButton();
+            this.writeMarkHamCheck = this.Factory.CreateRibbonCheckBox();
+            this.box6 = this.Factory.CreateRibbonBox();
             this.insertRectangleButton = this.Factory.CreateRibbonButton();
-            this.insertTextboxButton = this.Factory.CreateRibbonButton();
             this.insertArrowButton = this.Factory.CreateRibbonButton();
             this.insertCalloutButton = this.Factory.CreateRibbonButton();
+            this.insertTextboxButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
             this.box2.SuspendLayout();
             this.box3.SuspendLayout();
-            this.group2.SuspendLayout();
-            this.box4.SuspendLayout();
+            this.box5.SuspendLayout();
+            this.box6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.Groups.Add(this.group1);
-            this.tab1.Groups.Add(this.group2);
             this.tab1.Label = "PPTxA";
             this.tab1.Name = "tab1";
             // 
@@ -76,7 +93,9 @@
             this.group1.Items.Add(this.box1);
             this.group1.Items.Add(this.box2);
             this.group1.Items.Add(this.box3);
-            this.group1.Label = "文字編集";
+            this.group1.Items.Add(this.box5);
+            this.group1.Items.Add(this.box6);
+            this.group1.Label = "文章編集";
             this.group1.Name = "group1";
             // 
             // box1
@@ -121,7 +140,7 @@
             // 
             // writeCommentAddFromFileButton
             // 
-            this.writeCommentAddFromFileButton.Label = "ファイルから";
+            this.writeCommentAddFromFileButton.Label = "ファイル";
             this.writeCommentAddFromFileButton.Name = "writeCommentAddFromFileButton";
             this.writeCommentAddFromFileButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.writeCommentAddFromFileButton_Click);
             // 
@@ -162,31 +181,75 @@
             this.writeCommentComboSaveButton.Name = "writeCommentComboSaveButton";
             this.writeCommentComboSaveButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.writeCommentComboSaveButton_Click);
             // 
-            // group2
+            // box5
             // 
-            this.group2.Items.Add(this.box4);
-            this.group2.Label = "描画";
-            this.group2.Name = "group2";
+            this.box5.Items.Add(this.writeMarkCombo);
+            this.box5.Items.Add(this.writeMarkInputButton);
+            this.box5.Items.Add(this.writeMarkHamCheck);
+            this.box5.Name = "box5";
             // 
-            // box4
+            // writeMarkCombo
             // 
-            this.box4.Items.Add(this.insertRectangleButton);
-            this.box4.Items.Add(this.insertArrowButton);
-            this.box4.Items.Add(this.insertTextboxButton);
-            this.box4.Items.Add(this.insertCalloutButton);
-            this.box4.Name = "box4";
+            ribbonDropDownItemImpl1.Label = "※";
+            ribbonDropDownItemImpl2.Label = "●";
+            ribbonDropDownItemImpl3.Label = "○";
+            ribbonDropDownItemImpl4.Label = "×";
+            ribbonDropDownItemImpl5.Label = "■";
+            ribbonDropDownItemImpl6.Label = "←";
+            ribbonDropDownItemImpl7.Label = "→";
+            ribbonDropDownItemImpl8.Label = "↑";
+            ribbonDropDownItemImpl9.Label = "↓";
+            ribbonDropDownItemImpl10.Label = "【 】";
+            ribbonDropDownItemImpl11.Label = "[ ]";
+            ribbonDropDownItemImpl12.Label = "「 」";
+            ribbonDropDownItemImpl13.Label = "『 』";
+            ribbonDropDownItemImpl14.Label = "\" \"";
+            ribbonDropDownItemImpl15.Label = "\' \'";
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl1);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl2);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl3);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl4);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl5);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl6);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl7);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl8);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl9);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl10);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl11);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl12);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl13);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl14);
+            this.writeMarkCombo.Items.Add(ribbonDropDownItemImpl15);
+            this.writeMarkCombo.Label = "comboBox1";
+            this.writeMarkCombo.Name = "writeMarkCombo";
+            this.writeMarkCombo.ShowLabel = false;
+            this.writeMarkCombo.SizeString = "AAAA";
+            this.writeMarkCombo.Text = null;
+            // 
+            // writeMarkInputButton
+            // 
+            this.writeMarkInputButton.Label = "記号挿入";
+            this.writeMarkInputButton.Name = "writeMarkInputButton";
+            this.writeMarkInputButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.writeMarkInputButton_Click);
+            // 
+            // writeMarkHamCheck
+            // 
+            this.writeMarkHamCheck.Label = "挟込";
+            this.writeMarkHamCheck.Name = "writeMarkHamCheck";
+            // 
+            // box6
+            // 
+            this.box6.Items.Add(this.insertRectangleButton);
+            this.box6.Items.Add(this.insertArrowButton);
+            this.box6.Items.Add(this.insertCalloutButton);
+            this.box6.Items.Add(this.insertTextboxButton);
+            this.box6.Name = "box6";
             // 
             // insertRectangleButton
             // 
             this.insertRectangleButton.Label = "赤枠";
             this.insertRectangleButton.Name = "insertRectangleButton";
             this.insertRectangleButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertRectangleButton_Click);
-            // 
-            // insertTextboxButton
-            // 
-            this.insertTextboxButton.Label = "文字枠";
-            this.insertTextboxButton.Name = "insertTextboxButton";
-            this.insertTextboxButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertTextboxButton_Click);
             // 
             // insertArrowButton
             // 
@@ -199,6 +262,12 @@
             this.insertCalloutButton.Label = "吹出";
             this.insertCalloutButton.Name = "insertCalloutButton";
             this.insertCalloutButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertCalloutButton_Click);
+            // 
+            // insertTextboxButton
+            // 
+            this.insertTextboxButton.Label = "文字枠";
+            this.insertTextboxButton.Name = "insertTextboxButton";
+            this.insertTextboxButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertTextboxButton_Click);
             // 
             // Ribbon1
             // 
@@ -216,10 +285,10 @@
             this.box2.PerformLayout();
             this.box3.ResumeLayout(false);
             this.box3.PerformLayout();
-            this.group2.ResumeLayout(false);
-            this.group2.PerformLayout();
-            this.box4.ResumeLayout(false);
-            this.box4.PerformLayout();
+            this.box5.ResumeLayout(false);
+            this.box5.PerformLayout();
+            this.box6.ResumeLayout(false);
+            this.box6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,12 +310,15 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton doEditComboButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox addCommentPreClearCheck;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton writeCommentComboSaveButton;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertRectangleButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertArrowButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertTextboxButton;
-        internal Microsoft.Office.Tools.Ribbon.RibbonBox box4;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertCalloutButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box5;
+        internal Microsoft.Office.Tools.Ribbon.RibbonComboBox writeMarkCombo;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton writeMarkInputButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox writeMarkHamCheck;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box6;
     }
 
     partial class ThisRibbonCollection

@@ -32,26 +32,6 @@ namespace PPTxAddin
             return Globals.ThisAddIn.Application.ActivePresentation.Slides[idx];
         }
 
-        //プレイスホルダーの数を取得
-        private int getPlaceholdersCount(PPT.Slide cs)
-        {
-            return cs.Shapes.Placeholders.Count;
-        }
-
-        //Shapesの数を取得
-        private int getShapesCount(PPT.Slide cs)
-        {
-            return cs.Shapes.Count;
-        }
-
-        //スライドタイトル判定
-        Boolean checkHasTitle(PPT.Slide cs)
-        {
-            var flg = cs.Shapes.HasTitle;
-            if (flg == MsoTriState.msoTrue) return true;
-            else return false;
-        }
-
         //選択範囲を取得
         PPT.Selection getSelection()
         {
@@ -64,9 +44,9 @@ namespace PPTxAddin
             string src = writeCommentCombo.Text;
             src = src.Replace(br_sp, "\r\n");
             var sa = getSelection();
-            var cr_page = getCurrentSlide();
-            string search = sa.TextRange.Text;
-            cr_page.Shapes.Placeholders[2].TextFrame.TextRange.Replace(search, search + src);
+            //sa.TextRange.InsertAfter(src);
+            sa.TextRange.Text = src;
+
         }
 
         //ドロップダウンに値を追加する
@@ -168,6 +148,35 @@ namespace PPTxAddin
             MessageBox.Show("保存できました!");
         }
 
+        //記号で前後を挟む
+        private string mark_ham(string mark, string body)
+        {
+            Regex pt = new Regex(@"(\[|【|「|『|""|\')( )(\]|】|」|』|""|\')", RegexOptions.Compiled);
+            if (!pt.IsMatch(mark))
+                return body;
+            Match mt = pt.Match(mark);
+            return mt.Groups[1].Value + body + mt.Groups[3].Value;
+        }
+
+        //コンボで選択した記号を挿入する
+        private void write_mark()
+        {
+            var sa = getSelection();
+            string src = writeMarkCombo.Text;
+
+            if (writeMarkHamCheck.Checked)
+            {
+                string body = sa.TextRange.Text;
+                body = mark_ham(src, body);
+                sa.TextRange.Text = body;
+            }
+            else
+            {
+                sa.TextRange.Text = src;
+            }
+
+        }
+
         //角丸赤枠を挿入
         private void insert_rounded_rect()
         {
@@ -212,7 +221,7 @@ namespace PPTxAddin
             textbox.Fill.ForeColor.RGB = getRGB(255, 255, 255);
             textbox.TextFrame.AutoSize = PPT.PpAutoSize.ppAutoSizeNone;
             textbox.TextFrame.TextRange.Font.Name = "HGPｺﾞｼｯｸM";
-            textbox.TextFrame.TextRange.Text = "Textbox";
+            textbox.TextFrame.TextRange.Text = "説明を入力";
         }
 
         //吹出を挿入
@@ -226,6 +235,9 @@ namespace PPTxAddin
             callout.Line.ForeColor.RGB = getRGB(255, 153, 0);
             callout.Line.Weight = 2.5F;
             callout.TextFrame.TextRange.Font.Name = "HGPｺﾞｼｯｸM";
+            callout.TextFrame.TextRange.Text = "説明を入力";
+            callout.TextFrame.TextRange.Font.Color.RGB = getRGB(0, 0, 0);
+            callout.TextFrame.TextRange.Font.Size = 12;
         }
 
     }

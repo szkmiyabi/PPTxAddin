@@ -124,5 +124,11 @@ namespace PPTxAddin
         {
             insert_callout();
         }
+
+        //記号挿入
+        private void writeMarkInputButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            write_mark();
+        }
     }
 }

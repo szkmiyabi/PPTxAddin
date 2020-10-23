@@ -202,5 +202,31 @@ namespace PPTxAddin
         {
             paste_slide();
         }
+
+        //書式無
+        private void resetShapeStyleButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            reset_shape_style();
+        }
+
+        private void bringFrontButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            bring_front();
+        }
+
+        private void textCutButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            text_cut();
+        }
+
+        private void textPasteButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            text_paste();
+        }
+
+        private void textCopyButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            text_copy();
+        }
     }
 }

@@ -262,6 +262,32 @@ namespace PPTxAddin
             callout.TextFrame.TextRange.Font.Size = 12;
         }
 
+        //図形の書式無効化
+        private void reset_shape_style()
+        {
+            var sa = getSelection();
+            var sps = sa.ShapeRange;
+            for(int i=1; i<=sps.Count; i++)
+            {
+                var sp = sps[i];
+                sp.Fill.Visible = MsoTriState.msoFalse;
+                sp.Line.Visible = MsoTriState.msoFalse;
+                //sp.TextFrame.TextRange.Font.Bold = MsoTriState.msoFalse;
+            }
+        }
+
+        //最前面に移動
+        private void bring_front()
+        {
+            var sa = getSelection();
+            var sps = sa.ShapeRange;
+            for (int i = 1; i <= sps.Count; i++)
+            {
+                var sp = sps[i];
+                sp.ZOrder(MsoZOrderCmd.msoBringToFront);
+            }
+        }
+
         //スライド複製
         private void duplicate_slide()
         {
@@ -288,6 +314,42 @@ namespace PPTxAddin
         {
             var crSlides = Globals.ThisAddIn.Application.ActivePresentation.Slides;
             crSlides.Paste(Globals.ThisAddIn.Application.ActiveWindow.Selection.SlideRange.SlideIndex + 1);
+        }
+
+        //テキストの切り取り
+        private void text_cut()
+        {
+            var sa = getSelection();
+            sa.TextRange.Cut();
+        }
+
+        //テキストのみコピー
+        private void text_copy()
+        {
+            try
+            {
+                var sa = getSelection();
+                sa.TextRange.Copy();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("この機能はテキストのみです。テキストを選択してください。");
+            }
+
+        }
+
+        //テキストのみ貼り付け
+        private void text_paste()
+        {
+            try
+            {
+                var sa = getSelection();
+                sa.TextRange.Paste();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("この機能はテキストのみです。テキストを選択して再度試してください。");
+            }
         }
 
         //赤字

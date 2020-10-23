@@ -49,6 +49,28 @@ namespace PPTxAddin
 
         }
 
+        //改行挿入
+        private void insert_br()
+        {
+            var sa = getSelection();
+            sa.TextRange.Text = "\r\n";
+        }
+
+        //選択範囲の文字を複製
+        private void duplicate_selection()
+        {
+            var sa = getSelection();
+            var old_txt = sa.TextRange.Text;
+            sa.TextRange.Text = old_txt + old_txt;
+        }
+
+        //選択範囲の文字を削除
+        private void delete_selection()
+        {
+            var sa = getSelection();
+            sa.TextRange.Text = "";
+        }
+
         //ドロップダウンに値を追加する
         private void do_add_comment()
         {
@@ -240,5 +262,67 @@ namespace PPTxAddin
             callout.TextFrame.TextRange.Font.Size = 12;
         }
 
+        //スライド複製
+        private void duplicate_slide()
+        {
+            var cs = getCurrentSlide();
+            cs.Duplicate();
+        }
+
+        //スライド挿入
+        private void insert_slide()
+        {
+            var crSlides = Globals.ThisAddIn.Application.ActivePresentation.Slides;
+            crSlides.AddSlide(Globals.ThisAddIn.Application.ActiveWindow.Selection.SlideRange.SlideIndex + 1, getCurrentSlide().CustomLayout);
+        }
+
+        //スライドコピー
+        private void copy_slide()
+        {
+            var cs = getCurrentSlide();
+            cs.Copy();
+        }
+
+        //スライド貼り付け
+        private void paste_slide()
+        {
+            var crSlides = Globals.ThisAddIn.Application.ActivePresentation.Slides;
+            crSlides.Paste(Globals.ThisAddIn.Application.ActiveWindow.Selection.SlideRange.SlideIndex + 1);
+        }
+
+        //赤字
+        private void paint_text_red()
+        {
+            var sa = getSelection();
+            sa.TextRange.Font.Color.RGB = getRGB(255, 0, 0);
+        }
+
+        //青字
+        private void paint_text_blue()
+        {
+            var sa = getSelection();
+            sa.TextRange.Font.Color.RGB = getRGB(0, 0, 255);
+        }
+
+        //黒字
+        private void paint_text_black()
+        {
+            var sa = getSelection();
+            sa.TextRange.Font.Color.RGB = getRGB(0, 0, 0);
+        }
+
+        //太字
+        private void bold_text()
+        {
+            var sa = getSelection();
+            sa.TextRange.Font.Bold = MsoTriState.msoTrue;
+        }
+
+        //細字
+        private void narrow_text()
+        {
+            var sa = getSelection();
+            sa.TextRange.Font.Bold = MsoTriState.msoFalse;
+        }
     }
 }

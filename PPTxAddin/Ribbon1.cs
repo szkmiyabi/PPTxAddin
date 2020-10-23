@@ -130,5 +130,77 @@ namespace PPTxAddin
         {
             write_mark();
         }
+
+        //改行
+        private void insertBrButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            insert_br();
+        }
+
+        //文字複製
+        private void duplicateTextButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            duplicate_selection();
+        }
+
+        //スライド複製
+        private void duplicateSlideButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            duplicate_slide();
+        }
+
+        //赤字
+        private void fontRedButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            paint_text_red();
+        }
+
+        //青字
+        private void fontBlueButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            paint_text_blue();
+        }
+
+        //黒字
+        private void fontBlackButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            paint_text_black();
+        }
+
+        //削除
+        private void textDeleteButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            delete_selection();
+        }
+
+        //新規挿入
+        private void insertSlideButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            insert_slide();
+        }
+
+        //太字
+        private void fontBoldButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            bold_text();
+        }
+
+        //細字
+        private void fontNarrowButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            narrow_text();
+        }
+
+        //コピー
+        private void slideCopyButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            copy_slide();
+        }
+
+        //貼付
+        private void slidePasteButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            paste_slide();
+        }
     }
 }

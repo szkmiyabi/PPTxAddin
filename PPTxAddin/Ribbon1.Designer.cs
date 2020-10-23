@@ -54,6 +54,7 @@
             this.box1 = this.Factory.CreateRibbonBox();
             this.writeCommentCombo = this.Factory.CreateRibbonComboBox();
             this.writeCommentInputButton = this.Factory.CreateRibbonButton();
+            this.insertBrButton = this.Factory.CreateRibbonButton();
             this.box2 = this.Factory.CreateRibbonBox();
             this.writeCommentAddButton = this.Factory.CreateRibbonButton();
             this.writeCommentAddFromFormButton = this.Factory.CreateRibbonButton();
@@ -73,6 +74,20 @@
             this.insertArrowButton = this.Factory.CreateRibbonButton();
             this.insertCalloutButton = this.Factory.CreateRibbonButton();
             this.insertTextboxButton = this.Factory.CreateRibbonButton();
+            this.box4 = this.Factory.CreateRibbonBox();
+            this.fontRedButton = this.Factory.CreateRibbonButton();
+            this.fontBlueButton = this.Factory.CreateRibbonButton();
+            this.fontBlackButton = this.Factory.CreateRibbonButton();
+            this.fontBoldButton = this.Factory.CreateRibbonButton();
+            this.fontNarrowButton = this.Factory.CreateRibbonButton();
+            this.duplicateTextButton = this.Factory.CreateRibbonButton();
+            this.textDeleteButton = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.box7 = this.Factory.CreateRibbonBox();
+            this.duplicateSlideButton = this.Factory.CreateRibbonButton();
+            this.insertSlideButton = this.Factory.CreateRibbonButton();
+            this.slideCopyButton = this.Factory.CreateRibbonButton();
+            this.slidePasteButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
@@ -80,11 +95,15 @@
             this.box3.SuspendLayout();
             this.box5.SuspendLayout();
             this.box6.SuspendLayout();
+            this.box4.SuspendLayout();
+            this.group2.SuspendLayout();
+            this.box7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.Groups.Add(this.group1);
+            this.tab1.Groups.Add(this.group2);
             this.tab1.Label = "PPTxA";
             this.tab1.Name = "tab1";
             // 
@@ -95,6 +114,7 @@
             this.group1.Items.Add(this.box3);
             this.group1.Items.Add(this.box5);
             this.group1.Items.Add(this.box6);
+            this.group1.Items.Add(this.box4);
             this.group1.Label = "文章編集";
             this.group1.Name = "group1";
             // 
@@ -102,6 +122,7 @@
             // 
             this.box1.Items.Add(this.writeCommentCombo);
             this.box1.Items.Add(this.writeCommentInputButton);
+            this.box1.Items.Add(this.insertBrButton);
             this.box1.Name = "box1";
             // 
             // writeCommentCombo
@@ -109,7 +130,7 @@
             this.writeCommentCombo.Label = "comboBox1";
             this.writeCommentCombo.Name = "writeCommentCombo";
             this.writeCommentCombo.ShowLabel = false;
-            this.writeCommentCombo.SizeString = "AAAAAAAAAAA";
+            this.writeCommentCombo.SizeString = "AAAAAAAAAAAAAAAAA";
             this.writeCommentCombo.Text = null;
             // 
             // writeCommentInputButton
@@ -117,6 +138,12 @@
             this.writeCommentInputButton.Label = "語句挿入";
             this.writeCommentInputButton.Name = "writeCommentInputButton";
             this.writeCommentInputButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.writeCommentInputButton_Click);
+            // 
+            // insertBrButton
+            // 
+            this.insertBrButton.Label = "改行";
+            this.insertBrButton.Name = "insertBrButton";
+            this.insertBrButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertBrButton_Click);
             // 
             // box2
             // 
@@ -269,6 +296,97 @@
             this.insertTextboxButton.Name = "insertTextboxButton";
             this.insertTextboxButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertTextboxButton_Click);
             // 
+            // box4
+            // 
+            this.box4.Items.Add(this.fontRedButton);
+            this.box4.Items.Add(this.fontBlueButton);
+            this.box4.Items.Add(this.fontBlackButton);
+            this.box4.Items.Add(this.fontBoldButton);
+            this.box4.Items.Add(this.fontNarrowButton);
+            this.box4.Items.Add(this.duplicateTextButton);
+            this.box4.Items.Add(this.textDeleteButton);
+            this.box4.Name = "box4";
+            // 
+            // fontRedButton
+            // 
+            this.fontRedButton.Label = "赤";
+            this.fontRedButton.Name = "fontRedButton";
+            this.fontRedButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.fontRedButton_Click);
+            // 
+            // fontBlueButton
+            // 
+            this.fontBlueButton.Label = "青";
+            this.fontBlueButton.Name = "fontBlueButton";
+            this.fontBlueButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.fontBlueButton_Click);
+            // 
+            // fontBlackButton
+            // 
+            this.fontBlackButton.Label = "黒";
+            this.fontBlackButton.Name = "fontBlackButton";
+            this.fontBlackButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.fontBlackButton_Click);
+            // 
+            // fontBoldButton
+            // 
+            this.fontBoldButton.Label = "太";
+            this.fontBoldButton.Name = "fontBoldButton";
+            this.fontBoldButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.fontBoldButton_Click);
+            // 
+            // fontNarrowButton
+            // 
+            this.fontNarrowButton.Label = "細";
+            this.fontNarrowButton.Name = "fontNarrowButton";
+            this.fontNarrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.fontNarrowButton_Click);
+            // 
+            // duplicateTextButton
+            // 
+            this.duplicateTextButton.Label = "複製";
+            this.duplicateTextButton.Name = "duplicateTextButton";
+            this.duplicateTextButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.duplicateTextButton_Click);
+            // 
+            // textDeleteButton
+            // 
+            this.textDeleteButton.Label = "削除";
+            this.textDeleteButton.Name = "textDeleteButton";
+            this.textDeleteButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.textDeleteButton_Click);
+            // 
+            // group2
+            // 
+            this.group2.Items.Add(this.box7);
+            this.group2.Label = "スライド編集";
+            this.group2.Name = "group2";
+            // 
+            // box7
+            // 
+            this.box7.Items.Add(this.duplicateSlideButton);
+            this.box7.Items.Add(this.insertSlideButton);
+            this.box7.Items.Add(this.slideCopyButton);
+            this.box7.Items.Add(this.slidePasteButton);
+            this.box7.Name = "box7";
+            // 
+            // duplicateSlideButton
+            // 
+            this.duplicateSlideButton.Label = "複製";
+            this.duplicateSlideButton.Name = "duplicateSlideButton";
+            this.duplicateSlideButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.duplicateSlideButton_Click);
+            // 
+            // insertSlideButton
+            // 
+            this.insertSlideButton.Label = "新規";
+            this.insertSlideButton.Name = "insertSlideButton";
+            this.insertSlideButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertSlideButton_Click);
+            // 
+            // slideCopyButton
+            // 
+            this.slideCopyButton.Label = "コピー";
+            this.slideCopyButton.Name = "slideCopyButton";
+            this.slideCopyButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.slideCopyButton_Click);
+            // 
+            // slidePasteButton
+            // 
+            this.slidePasteButton.Label = "貼付";
+            this.slidePasteButton.Name = "slidePasteButton";
+            this.slidePasteButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.slidePasteButton_Click);
+            // 
             // Ribbon1
             // 
             this.Name = "Ribbon1";
@@ -289,6 +407,12 @@
             this.box5.PerformLayout();
             this.box6.ResumeLayout(false);
             this.box6.PerformLayout();
+            this.box4.ResumeLayout(false);
+            this.box4.PerformLayout();
+            this.group2.ResumeLayout(false);
+            this.group2.PerformLayout();
+            this.box7.ResumeLayout(false);
+            this.box7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -319,6 +443,21 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton writeMarkInputButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox writeMarkHamCheck;
         internal Microsoft.Office.Tools.Ribbon.RibbonBox box6;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton insertBrButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton duplicateTextButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton duplicateSlideButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box4;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton fontRedButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton fontBlueButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton fontBlackButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton textDeleteButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton insertSlideButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box7;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton fontBoldButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton fontNarrowButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton slideCopyButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton slidePasteButton;
     }
 
     partial class ThisRibbonCollection

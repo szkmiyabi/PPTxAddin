@@ -319,6 +319,32 @@ namespace PPTxAddin
             }
         }
 
+        //スライド上のオブジェクトを自動全選択（プレースホルダーと表は除く）
+        private void select_object()
+        {
+            try
+            {
+                var cs = getCurrentSlide();
+                var shapes = cs.Shapes;
+                int cnt = 0;
+                for (int i = 1; i <= shapes.Count; i++)
+                {
+                    var sp = shapes[i];
+                    if (sp.Type != MsoShapeType.msoPlaceholder && sp.Type != MsoShapeType.msoTable)
+                    {
+                        if (cnt == 0) sp.Select(MsoTriState.msoTrue);
+                        else sp.Select(MsoTriState.msoFalse);
+                        cnt++;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("実行エラー：" + ex.Message);
+            }
+
+        }
+
         //最前面に移動
         private void bring_front()
         {

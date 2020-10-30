@@ -104,6 +104,7 @@
             this.insertLineArrowButton = this.Factory.CreateRibbonButton();
             this.flipHorizontalButton = this.Factory.CreateRibbonButton();
             this.flipVerticalButton = this.Factory.CreateRibbonButton();
+            this.selectObjectButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
@@ -479,6 +480,7 @@
             // 
             this.box9.Items.Add(this.resetShapeStyleButton);
             this.box9.Items.Add(this.bringFrontButton);
+            this.box9.Items.Add(this.selectObjectButton);
             this.box9.Items.Add(this.flipHorizontalButton);
             this.box9.Items.Add(this.flipVerticalButton);
             this.box9.Name = "box9";
@@ -578,6 +580,14 @@
             this.flipVerticalButton.ShowImage = true;
             this.flipVerticalButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.flipVerticalButton_Click);
             // 
+            // selectObjectButton
+            // 
+            this.selectObjectButton.Label = "全選択";
+            this.selectObjectButton.Name = "selectObjectButton";
+            this.selectObjectButton.OfficeImageId = "ReadingModePageColorMenu";
+            this.selectObjectButton.ShowImage = true;
+            this.selectObjectButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.selectObjectButton_Click);
+            // 
             // Ribbon1
             // 
             this.Name = "Ribbon1";
@@ -669,6 +679,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertLineArrowButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton flipHorizontalButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton flipVerticalButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton selectObjectButton;
     }
 
     partial class ThisRibbonCollection

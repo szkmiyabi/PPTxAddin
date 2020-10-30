@@ -243,5 +243,10 @@ namespace PPTxAddin
         {
             vertical_flip();
         }
+
+        private void selectObjectButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            select_object();
+        }
     }
 }

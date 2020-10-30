@@ -173,7 +173,7 @@ namespace PPTxAddin
         //記号で前後を挟む
         private string mark_ham(string mark, string body)
         {
-            Regex pt = new Regex(@"(\[|【|「|『|""|\')( )(\]|】|」|』|""|\')", RegexOptions.Compiled);
+            Regex pt = new Regex(@"(\[|【|「|『|""|\'|\(|（|<|＜)( )(\]|】|」|』|""|\'|\)|）|>|＞)", RegexOptions.Compiled);
             if (!pt.IsMatch(mark))
                 return body;
             Match mt = pt.Match(mark);
@@ -223,6 +223,25 @@ namespace PPTxAddin
             var arrow = cs.Shapes.AddShape(MsoAutoShapeType.msoShapeRightArrow, 90, 90, size[0], size[1]);
             arrow.Fill.ForeColor.RGB = getRGB(255, 153, 0);
             arrow.Line.Visible = MsoTriState.msoFalse;
+            arrow.Shadow.Visible = MsoTriState.msoTrue;
+            arrow.Shadow.Style = MsoShadowStyle.msoShadowStyleOuterShadow;
+            arrow.Shadow.OffsetX = 1;
+            arrow.Shadow.OffsetY = 1;
+            arrow.Shadow.Transparency = 0.5F;
+        }
+
+        //線矢印を挿入
+        private void insert_line_arrow()
+        {
+            var cs = getCurrentSlide();
+            float[] matrix = { 85, 85 };
+            var arrow = cs.Shapes.AddLine(matrix[0], matrix[1], matrix[0] + 60, matrix[1] + 10);
+            arrow.Line.EndArrowheadStyle = MsoArrowheadStyle.msoArrowheadOpen;
+            arrow.Line.EndArrowheadLength = MsoArrowheadLength.msoArrowheadLong;
+            arrow.Line.EndArrowheadWidth = MsoArrowheadWidth.msoArrowheadWide;
+            arrow.Line.ForeColor.RGB = getRGB(255, 0, 0);
+            arrow.Line.Weight = 2.5F;
+            arrow.Shadow.Visible = MsoTriState.msoTrue;
             arrow.Shadow.Visible = MsoTriState.msoTrue;
             arrow.Shadow.Style = MsoShadowStyle.msoShadowStyleOuterShadow;
             arrow.Shadow.OffsetX = 1;

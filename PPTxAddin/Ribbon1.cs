@@ -228,5 +228,10 @@ namespace PPTxAddin
         {
             text_copy();
         }
+
+        private void insertLineArrowButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            insert_line_arrow();
+        }
     }
 }

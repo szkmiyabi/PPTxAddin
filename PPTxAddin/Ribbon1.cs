@@ -233,5 +233,15 @@ namespace PPTxAddin
         {
             insert_line_arrow();
         }
+
+        private void flipHorizontalButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            horizontal_flip();
+        }
+
+        private void flipVerticalButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            vertical_flip();
+        }
     }
 }

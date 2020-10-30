@@ -102,6 +102,8 @@
             this.slideCopyButton = this.Factory.CreateRibbonButton();
             this.slidePasteButton = this.Factory.CreateRibbonButton();
             this.insertLineArrowButton = this.Factory.CreateRibbonButton();
+            this.flipHorizontalButton = this.Factory.CreateRibbonButton();
+            this.flipVerticalButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
@@ -477,6 +479,8 @@
             // 
             this.box9.Items.Add(this.resetShapeStyleButton);
             this.box9.Items.Add(this.bringFrontButton);
+            this.box9.Items.Add(this.flipHorizontalButton);
+            this.box9.Items.Add(this.flipVerticalButton);
             this.box9.Name = "box9";
             // 
             // resetShapeStyleButton
@@ -557,6 +561,22 @@
             this.insertLineArrowButton.OfficeImageId = "Arrow";
             this.insertLineArrowButton.ShowImage = true;
             this.insertLineArrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertLineArrowButton_Click);
+            // 
+            // flipHorizontalButton
+            // 
+            this.flipHorizontalButton.Label = "横反転";
+            this.flipHorizontalButton.Name = "flipHorizontalButton";
+            this.flipHorizontalButton.OfficeImageId = "ReviewCompareTwoVersions";
+            this.flipHorizontalButton.ShowImage = true;
+            this.flipHorizontalButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.flipHorizontalButton_Click);
+            // 
+            // flipVerticalButton
+            // 
+            this.flipVerticalButton.Label = "縦反転";
+            this.flipVerticalButton.Name = "flipVerticalButton";
+            this.flipVerticalButton.OfficeImageId = "RowHeight";
+            this.flipVerticalButton.ShowImage = true;
+            this.flipVerticalButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.flipVerticalButton_Click);
             // 
             // Ribbon1
             // 
@@ -647,6 +667,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton textCopyButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonBox box10;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton insertLineArrowButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton flipHorizontalButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton flipVerticalButton;
     }
 
     partial class ThisRibbonCollection

@@ -295,6 +295,30 @@ namespace PPTxAddin
             }
         }
 
+        //横反転
+        private void horizontal_flip()
+        {
+            var sa = getSelection();
+            var sps = sa.ShapeRange;
+            for (int i = 1; i <= sps.Count; i++)
+            {
+                var sp = sps[i];
+                sp.Flip(MsoFlipCmd.msoFlipHorizontal);
+            }
+        }
+
+        //縦反転
+        private void vertical_flip()
+        {
+            var sa = getSelection();
+            var sps = sa.ShapeRange;
+            for (int i = 1; i <= sps.Count; i++)
+            {
+                var sp = sps[i];
+                sp.Flip(MsoFlipCmd.msoFlipVertical);
+            }
+        }
+
         //最前面に移動
         private void bring_front()
         {

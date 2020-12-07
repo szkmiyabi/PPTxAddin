@@ -209,41 +209,49 @@ namespace PPTxAddin
             reset_shape_style();
         }
 
+        //最前面
         private void bringFrontButton_Click(object sender, RibbonControlEventArgs e)
         {
             bring_front();
         }
 
+        //文字切り取り
         private void textCutButton_Click(object sender, RibbonControlEventArgs e)
         {
             text_cut();
         }
 
+        //文字貼付
         private void textPasteButton_Click(object sender, RibbonControlEventArgs e)
         {
             text_paste();
         }
 
+        //文字コピー
         private void textCopyButton_Click(object sender, RibbonControlEventArgs e)
         {
             text_copy();
         }
 
+        //千矢印挿入
         private void insertLineArrowButton_Click(object sender, RibbonControlEventArgs e)
         {
             insert_line_arrow();
         }
 
+        //水平反転
         private void flipHorizontalButton_Click(object sender, RibbonControlEventArgs e)
         {
             horizontal_flip();
         }
 
+        //縦反転
         private void flipVerticalButton_Click(object sender, RibbonControlEventArgs e)
         {
             vertical_flip();
         }
 
+        //全選択
         private void selectObjectButton_Click(object sender, RibbonControlEventArgs e)
         {
             select_object();

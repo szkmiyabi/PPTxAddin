@@ -88,12 +88,16 @@
             this.group3 = this.Factory.CreateRibbonGroup();
             this.box8 = this.Factory.CreateRibbonBox();
             this.insertRectangleButton = this.Factory.CreateRibbonButton();
+            this.insertLineArrowButton = this.Factory.CreateRibbonButton();
             this.insertArrowButton = this.Factory.CreateRibbonButton();
             this.insertCalloutButton = this.Factory.CreateRibbonButton();
             this.insertTextboxButton = this.Factory.CreateRibbonButton();
             this.box9 = this.Factory.CreateRibbonBox();
             this.resetShapeStyleButton = this.Factory.CreateRibbonButton();
             this.bringFrontButton = this.Factory.CreateRibbonButton();
+            this.selectObjectButton = this.Factory.CreateRibbonButton();
+            this.flipHorizontalButton = this.Factory.CreateRibbonButton();
+            this.flipVerticalButton = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
             this.box7 = this.Factory.CreateRibbonBox();
             this.duplicateSlideButton = this.Factory.CreateRibbonButton();
@@ -101,10 +105,6 @@
             this.box10 = this.Factory.CreateRibbonBox();
             this.slideCopyButton = this.Factory.CreateRibbonButton();
             this.slidePasteButton = this.Factory.CreateRibbonButton();
-            this.insertLineArrowButton = this.Factory.CreateRibbonButton();
-            this.flipHorizontalButton = this.Factory.CreateRibbonButton();
-            this.flipVerticalButton = this.Factory.CreateRibbonButton();
-            this.selectObjectButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
@@ -452,6 +452,14 @@
             this.insertRectangleButton.ShowImage = true;
             this.insertRectangleButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertRectangleButton_Click);
             // 
+            // insertLineArrowButton
+            // 
+            this.insertLineArrowButton.Label = "矢印";
+            this.insertLineArrowButton.Name = "insertLineArrowButton";
+            this.insertLineArrowButton.OfficeImageId = "Arrow";
+            this.insertLineArrowButton.ShowImage = true;
+            this.insertLineArrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertLineArrowButton_Click);
+            // 
             // insertArrowButton
             // 
             this.insertArrowButton.Label = "図矢印";
@@ -500,6 +508,30 @@
             this.bringFrontButton.OfficeImageId = "CircularReferences";
             this.bringFrontButton.ShowImage = true;
             this.bringFrontButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.bringFrontButton_Click);
+            // 
+            // selectObjectButton
+            // 
+            this.selectObjectButton.Label = "全選択";
+            this.selectObjectButton.Name = "selectObjectButton";
+            this.selectObjectButton.OfficeImageId = "ReadingModePageColorMenu";
+            this.selectObjectButton.ShowImage = true;
+            this.selectObjectButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.selectObjectButton_Click);
+            // 
+            // flipHorizontalButton
+            // 
+            this.flipHorizontalButton.Label = "横反転";
+            this.flipHorizontalButton.Name = "flipHorizontalButton";
+            this.flipHorizontalButton.OfficeImageId = "ReviewCompareTwoVersions";
+            this.flipHorizontalButton.ShowImage = true;
+            this.flipHorizontalButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.flipHorizontalButton_Click);
+            // 
+            // flipVerticalButton
+            // 
+            this.flipVerticalButton.Label = "縦反転";
+            this.flipVerticalButton.Name = "flipVerticalButton";
+            this.flipVerticalButton.OfficeImageId = "RowHeight";
+            this.flipVerticalButton.ShowImage = true;
+            this.flipVerticalButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.flipVerticalButton_Click);
             // 
             // group2
             // 
@@ -555,38 +587,6 @@
             this.slidePasteButton.ScreenTip = "貼付";
             this.slidePasteButton.ShowImage = true;
             this.slidePasteButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.slidePasteButton_Click);
-            // 
-            // insertLineArrowButton
-            // 
-            this.insertLineArrowButton.Label = "矢印";
-            this.insertLineArrowButton.Name = "insertLineArrowButton";
-            this.insertLineArrowButton.OfficeImageId = "Arrow";
-            this.insertLineArrowButton.ShowImage = true;
-            this.insertLineArrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertLineArrowButton_Click);
-            // 
-            // flipHorizontalButton
-            // 
-            this.flipHorizontalButton.Label = "横反転";
-            this.flipHorizontalButton.Name = "flipHorizontalButton";
-            this.flipHorizontalButton.OfficeImageId = "ReviewCompareTwoVersions";
-            this.flipHorizontalButton.ShowImage = true;
-            this.flipHorizontalButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.flipHorizontalButton_Click);
-            // 
-            // flipVerticalButton
-            // 
-            this.flipVerticalButton.Label = "縦反転";
-            this.flipVerticalButton.Name = "flipVerticalButton";
-            this.flipVerticalButton.OfficeImageId = "RowHeight";
-            this.flipVerticalButton.ShowImage = true;
-            this.flipVerticalButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.flipVerticalButton_Click);
-            // 
-            // selectObjectButton
-            // 
-            this.selectObjectButton.Label = "全選択";
-            this.selectObjectButton.Name = "selectObjectButton";
-            this.selectObjectButton.OfficeImageId = "ReadingModePageColorMenu";
-            this.selectObjectButton.ShowImage = true;
-            this.selectObjectButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.selectObjectButton_Click);
             // 
             // Ribbon1
             // 

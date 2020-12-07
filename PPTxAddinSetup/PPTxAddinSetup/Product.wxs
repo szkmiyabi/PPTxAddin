@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="PPTxAddin" Language="1033" Version="0.0.0.1" Manufacturer="JCI" UpgradeCode="A8AA1F4A-B864-4674-BF6E-6126884DCFC1">
+	<Product Id="*" Name="PPTxAddin" Language="1033" Version="0.0.0.2" Manufacturer="JCI" UpgradeCode="4E310442-48CA-4DC4-B9C5-63833B58C10C">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />

@@ -398,7 +398,7 @@ namespace PPTxAddin
             string base_name = Path.GetFileNameWithoutExtension(fullpath);
             int nm = getSlideNum();
             var cs = getCurrentSlide();
-            string save_filename = getDefaultWorkDir() + base_name + "_p" + nm + DateUtil.fetch_filename_logtime() + ".png";
+            string save_filename = getDefaultWorkDir() + base_name + "_抽出_p" + nm + "_" + DateUtil.fetch_filename_logtime() + ".png";
             cs.Export(save_filename, "PNG");
             MessageBox.Show("保存に成功しました。ファイル名：" + save_filename);
         }

@@ -162,6 +162,7 @@
     <Compile Include="ComboEditForm.Designer.cs">
       <DependentUpon>ComboEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DateUtil.cs" />
     <Compile Include="InputForm.cs">
       <SubType>Form</SubType>
     </Compile>

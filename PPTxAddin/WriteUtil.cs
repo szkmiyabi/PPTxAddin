@@ -18,6 +18,12 @@ namespace PPTxAddin
 
         private string br_sp = "<bkmk:br>";
 
+        //スライド番号の取得
+        private int getSlideNum()
+        {
+            return Globals.ThisAddIn.Application.ActiveWindow.Selection.SlideRange.SlideIndex;
+        }
+
         //カレントスライドページを取得
         private PPT.Slide getCurrentSlide()
         {
@@ -383,6 +389,18 @@ namespace PPTxAddin
         {
             var crSlides = Globals.ThisAddIn.Application.ActivePresentation.Slides;
             crSlides.Paste(Globals.ThisAddIn.Application.ActiveWindow.Selection.SlideRange.SlideIndex + 1);
+        }
+
+        //現在のスライドをPNG保存する
+        private void current_slide_to_png()
+        {
+            string fullpath = Globals.ThisAddIn.Application.ActivePresentation.FullName;
+            string base_name = Path.GetFileNameWithoutExtension(fullpath);
+            int nm = getSlideNum();
+            var cs = getCurrentSlide();
+            string save_filename = getDefaultWorkDir() + base_name + "_p" + nm + DateUtil.fetch_filename_logtime() + ".png";
+            cs.Export(save_filename, "PNG");
+            MessageBox.Show("保存に成功しました。ファイル名：" + save_filename);
         }
 
         //テキストの切り取り

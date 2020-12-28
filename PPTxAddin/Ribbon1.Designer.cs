@@ -105,6 +105,8 @@
             this.box10 = this.Factory.CreateRibbonBox();
             this.slideCopyButton = this.Factory.CreateRibbonButton();
             this.slidePasteButton = this.Factory.CreateRibbonButton();
+            this.box11 = this.Factory.CreateRibbonBox();
+            this.exportCurrentSlideAsPNGButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.box1.SuspendLayout();
@@ -119,6 +121,7 @@
             this.group2.SuspendLayout();
             this.box7.SuspendLayout();
             this.box10.SuspendLayout();
+            this.box11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -537,6 +540,7 @@
             // 
             this.group2.Items.Add(this.box7);
             this.group2.Items.Add(this.box10);
+            this.group2.Items.Add(this.box11);
             this.group2.Label = "スライド編集";
             this.group2.Name = "group2";
             // 
@@ -588,6 +592,19 @@
             this.slidePasteButton.ShowImage = true;
             this.slidePasteButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.slidePasteButton_Click);
             // 
+            // box11
+            // 
+            this.box11.Items.Add(this.exportCurrentSlideAsPNGButton);
+            this.box11.Name = "box11";
+            // 
+            // exportCurrentSlideAsPNGButton
+            // 
+            this.exportCurrentSlideAsPNGButton.Label = "頁画像";
+            this.exportCurrentSlideAsPNGButton.Name = "exportCurrentSlideAsPNGButton";
+            this.exportCurrentSlideAsPNGButton.OfficeImageId = "PhotoAlbumInsert";
+            this.exportCurrentSlideAsPNGButton.ShowImage = true;
+            this.exportCurrentSlideAsPNGButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.exportCurrentSlideAsPNGButton_Click);
+            // 
             // Ribbon1
             // 
             this.Name = "Ribbon1";
@@ -622,6 +639,8 @@
             this.box7.PerformLayout();
             this.box10.ResumeLayout(false);
             this.box10.PerformLayout();
+            this.box11.ResumeLayout(false);
+            this.box11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -680,6 +699,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton flipHorizontalButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton flipVerticalButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton selectObjectButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box11;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton exportCurrentSlideAsPNGButton;
     }
 
     partial class ThisRibbonCollection

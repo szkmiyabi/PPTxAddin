@@ -46,19 +46,6 @@ namespace PPTxAddin
             }
         }
 
-        //TXTファイル保存先を取得
-        private string _get_txt_save_path()
-        {
-            string path = "";
-            SaveFileDialog fda = new SaveFileDialog();
-            fda.Filter = "Textファイル(*.txt)|*.txt";
-            fda.Title = "名前を付けて保存";
-            if (fda.ShowDialog() == DialogResult.OK)
-            {
-                path = fda.FileName;
-            }
-            return path;
-        }
         //コンボで選択した文字列を挿入する
         private void writeCommentInputButton_Click(object sender, RibbonControlEventArgs e)
         {
@@ -255,6 +242,12 @@ namespace PPTxAddin
         private void selectObjectButton_Click(object sender, RibbonControlEventArgs e)
         {
             select_object();
+        }
+
+        //頁画像
+        private void exportCurrentSlideAsPNGButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            current_slide_to_png();
         }
     }
 }

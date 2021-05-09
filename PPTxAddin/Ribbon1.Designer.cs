@@ -450,7 +450,7 @@
             // 
             this.insertRectangleButton.Label = "赤枠";
             this.insertRectangleButton.Name = "insertRectangleButton";
-            this.insertRectangleButton.OfficeImageId = "MsoInkStyle5";
+            this.insertRectangleButton.OfficeImageId = "InkFeltTipPen";
             this.insertRectangleButton.ScreenTip = "赤枠";
             this.insertRectangleButton.ShowImage = true;
             this.insertRectangleButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertRectangleButton_Click);
@@ -467,7 +467,7 @@
             // 
             this.insertArrowButton.Label = "図矢印";
             this.insertArrowButton.Name = "insertArrowButton";
-            this.insertArrowButton.OfficeImageId = "MarginsAdjust";
+            this.insertArrowButton.OfficeImageId = "MultipleSelect";
             this.insertArrowButton.ShowImage = true;
             this.insertArrowButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.insertArrowButton_Click);
             // 
